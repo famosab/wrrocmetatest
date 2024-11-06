@@ -5,6 +5,16 @@
         "https://github.com/nf-core/modules.git": {
             "modules": {
                 "nf-core": {
+                    "fastp": {
+                        "branch": "master",
+                        "git_sha": "666652151335353eef2fcd58880bcef5bc2928e1",
+                        "installed_by": ["modules"]
+                    },
+                    "megahit": {
+                        "branch": "master",
+                        "git_sha": "7755db15e36b30da564cd67fffdfe18a255092aa",
+                        "installed_by": ["modules"]
+                    }
                 }
             },
             "subworkflows": {
