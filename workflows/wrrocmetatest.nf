@@ -40,8 +40,6 @@ workflow WRROCMETATEST {
         }
     }
 
-    ch_versions = ch_versions.mix( FASTP.versions )
-
     // Run FASTP
     ch_trimmed_reads = FASTP(
                 ch_short_reads,
@@ -50,6 +48,8 @@ workflow WRROCMETATEST {
                 [],
                 []
                 ).reads
+
+    ch_versions = ch_versions.mix( FASTP.versions )
 
     // Run MEGAHIT
     MEGAHIT( ch_trimmed_reads )
@@ -69,7 +69,7 @@ workflow WRROCMETATEST {
 
 
     emit:
-    contigs        = MEGAHIT.contigs
+    contigs        = MEGAHIT.out.contigs
     versions       = ch_versions                 // channel: [ path(versions.yml) ]
 
 }
