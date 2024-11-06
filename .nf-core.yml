@@ -1,0 +1,65 @@
+bump_version: null
+lint:
+  files_exist:
+  - CITATIONS.md
+  - assets/multiqc_config.yml
+  - CHANGELOG.md
+  - CITATIONS.md
+  - assets/multiqc_config.yml
+  - CHANGELOG.md
+  - CODE_OF_CONDUCT.md
+  - assets/nf-core-wrroc-meta-test_logo_light.png
+  - docs/images/nf-core-wrroc-meta-test_logo_light.png
+  - docs/images/nf-core-wrroc-meta-test_logo_dark.png
+  - .github/ISSUE_TEMPLATE/config.yml
+  - .github/workflows/awstest.yml
+  - .github/workflows/awsfulltest.yml
+  files_unchanged:
+  - .github/CONTRIBUTING.md
+  - .github/CONTRIBUTING.md
+  - assets/sendmail_template.txt
+  - .prettierignore
+  - .prettierignore
+  - .github/CONTRIBUTING.md
+  - .github/CONTRIBUTING.md
+  - assets/sendmail_template.txt
+  - .prettierignore
+  - .prettierignore
+  - CODE_OF_CONDUCT.md
+  - assets/nf-core-wrroc-meta-test_logo_light.png
+  - docs/images/nf-core-wrroc-meta-test_logo_light.png
+  - docs/images/nf-core-wrroc-meta-test_logo_dark.png
+  - .github/ISSUE_TEMPLATE/bug_report.yml
+  multiqc_config: false
+  nextflow_config:
+  - manifest.name
+  - manifest.homePage
+  - validation.help.beforeText
+  - validation.help.afterText
+  - validation.summary.beforeText
+  - validation.summary.afterText
+nf_core_version: 3.0.2
+org_path: null
+repository_type: pipeline
+template:
+  author: "Famke B\xE4uerle, Tom Tubbesing, Keiler Collier, Matt Burridge, Benedikt\
+    \ Osterholz, Alex Sczyrba"
+  description: This pipeline runs fastp and megahit to test the creation of workflow
+    RO Crates
+  force: true
+  is_nfcore: false
+  name: wrroc-meta-test
+  org: famosab
+  outdir: .
+  skip_features:
+  - citations
+  - gitpod
+  - codespaces
+  - multiqc
+  - fastqc
+  - changelog
+  - adaptivecard
+  - slackreport
+  - seqera_platform
+  version: 1.0.0dev
+update: null
