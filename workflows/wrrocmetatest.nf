@@ -9,8 +9,8 @@ include { paramsSummaryMap       } from 'plugin/nf-schema'
 
 include { softwareVersionsToYAML } from '../subworkflows/nf-core/utils_nfcore_pipeline'
 
-include { FASTP } from '../modules/nf-core/fastp'
-include { MEGAHIT } from '../modules/nf-core/megahit'
+include { FASTP                  } from '../modules/nf-core/fastp'
+include { MEGAHIT                } from '../modules/nf-core/megahit'
 
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,8 +63,8 @@ workflow WRROCMETATEST {
 
 
     emit:
-    contigs        = MEGAHIT.out.contigs
-    versions       = ch_versions                 // channel: [ path(versions.yml) ]
+    contigs  = MEGAHIT.out.contigs         // channel: [ meta, path("*.contigs.fa.gz") ]
+    versions = ch_versions                 // channel: [ path(versions.yml) ]
 
 }
 

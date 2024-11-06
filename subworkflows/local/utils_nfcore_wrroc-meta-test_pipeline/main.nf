@@ -46,22 +46,22 @@ workflow PIPELINE_INITIALISATION {
     //     workflow.profile.tokenize(',').intersect(['conda', 'mamba']).size() >= 1
     // )
 
-    // //
-    // // Validate parameters and generate parameter summary to stdout
-    // //
-    // UTILS_NFSCHEMA_PLUGIN (
-    //     workflow,
-    //     validate_params,
-    //     null
-    // )
+    //
+    // Validate parameters and generate parameter summary to stdout
+    //
+    UTILS_NFSCHEMA_PLUGIN (
+        workflow,
+        validate_params,
+        null
+    )
 
-    // //
-    // // Check config provided to the pipeline
-    // //
-    // UTILS_NFCORE_PIPELINE (
-    //     nextflow_cli_args
-    // )
-    println "Skipping Initialisation"
+    //
+    // Check config provided to the pipeline
+    //
+    UTILS_NFCORE_PIPELINE (
+        nextflow_cli_args
+    )
+
     //
     // Custom validation for pipeline parameters
     //
@@ -70,8 +70,6 @@ workflow PIPELINE_INITIALISATION {
     //
     // Create channel from input file provided through params.input
     //
-
-
     Channel
         .fromList(samplesheetToList(params.input, "${projectDir}/assets/schema_input.json"))
         .map {

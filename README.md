@@ -16,7 +16,7 @@
 
 **famosab/wrroc-meta-test** is a bioinformatics pipeline that runs a minimal working example (fastp + megahit) on a small metagenome data set containing simulated Illumina reads from 15 microbial genomes to test the nf-prov plugin for metagenomics.
 
-![](./wrrocmetatest.svg)
+![](./wrrocmetatest.excalidraw.svg)
 
 ## Test Data Sets
 A small metagenome data set containing simulated Illumina reads from 15 microbial genomes
@@ -24,7 +24,7 @@ A small metagenome data set containing simulated Illumina reads from 15 microbia
 - https://openstack.cebitec.uni-bielefeld.de:8080/swift/v1/denbi-mg-course/read1.fq.gz
 - https://openstack.cebitec.uni-bielefeld.de:8080/swift/v1/denbi-mg-course/read2.fq.gz
 
-To run the pipeline locally on the testdata you need the following samplesheet
+To run the pipeline locally on the testdata you need to download the fq files and create the following samplesheet
 
 `testsheet.csv`:
 ```csv
