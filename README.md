@@ -27,6 +27,11 @@
 <!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
 
 
+## Test Data Sets
+A small metagenome data set containing simulated Illumina reads from 15 microbial genomes
+
+- https://openstack.cebitec.uni-bielefeld.de:8080/swift/v1/denbi-mg-course/read1.fq
+- https://openstack.cebitec.uni-bielefeld.de:8080/swift/v1/denbi-mg-course/read2.fq
 
 
 ## Usage
