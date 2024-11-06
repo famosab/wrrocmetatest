@@ -30,8 +30,8 @@
 ## Test Data Sets
 A small metagenome data set containing simulated Illumina reads from 15 microbial genomes
 
-- https://openstack.cebitec.uni-bielefeld.de:8080/swift/v1/denbi-mg-course/read1.fq
-- https://openstack.cebitec.uni-bielefeld.de:8080/swift/v1/denbi-mg-course/read2.fq
+- https://openstack.cebitec.uni-bielefeld.de:8080/swift/v1/denbi-mg-course/read1.fq.gz
+- https://openstack.cebitec.uni-bielefeld.de:8080/swift/v1/denbi-mg-course/read2.fq.gz
 
 
 ## Usage
