@@ -14,18 +14,9 @@
 
 ## Introduction
 
-**famosab/wrroc-meta-test** is a bioinformatics pipeline that ...
+**famosab/wrroc-meta-test** is a bioinformatics pipeline that runs a minimal working example (fastp + megahit) on a small metagenome data set containing simulated Illumina reads from 15 microbial genomes to test the nf-prov plugin for metagenomics.
 
-<!-- TODO nf-core:
-   Complete this sentence with a 2-3 sentence summary of what types of data the pipeline ingests, a brief overview of the
-   major pipeline sections and the types of output it produces. You're giving an overview to someone new
-   to nf-core here, in 15-20 seconds. For an example, see https://github.com/nf-core/rnaseq/blob/master/README.md#introduction
--->
-
-<!-- TODO nf-core: Include a figure that guides the user through the major workflow steps. Many nf-core
-     workflows use the "tube map" design for that. See https://nf-co.re/docs/contributing/design_guidelines#examples for examples.   -->
-<!-- TODO nf-core: Fill in short bullet-pointed list of the default steps in the pipeline -->
-
+![](./wrrocmetatest.svg)
 
 ## Test Data Sets
 A small metagenome data set containing simulated Illumina reads from 15 microbial genomes
@@ -33,6 +24,38 @@ A small metagenome data set containing simulated Illumina reads from 15 microbia
 - https://openstack.cebitec.uni-bielefeld.de:8080/swift/v1/denbi-mg-course/read1.fq.gz
 - https://openstack.cebitec.uni-bielefeld.de:8080/swift/v1/denbi-mg-course/read2.fq.gz
 
+To run the pipeline locally on the testdata you need the following samplesheet
+
+`testsheet.csv`:
+```csv
+sample,fastq_1,fastq_2
+test,read1.fq.gz,read2.fq.gz
+```
+
+And add the following config file
+
+`testdata.config`:
+```json
+process{
+    withName: FASTP {
+        cpus = 8
+        memory = 16.GB
+        }
+    withName: MEGAHIT {
+        cpus = 8
+        memory = 16.GB
+        ext.args = { "--k-min 51 --k-max 71 --k-step 20" }
+        }
+}
+```
+
+Then you can run the workflow with the following command
+
+```bash
+nextflow run wrrocmetatest/main.nf -profile docker --input testsheet.csv --outdir results -c testdata.config
+```
+
+Depending on your resources this test run takes around 5 minutes.
 
 ## Usage
 
@@ -49,8 +72,6 @@ CONTROL_REP1,AEG588A1_S1_L002_R1_001.fastq.gz,AEG588A1_S1_L002_R2_001.fastq.gz
 ```
 
 Each row represents a pair of fastq files (paired end).
-
-
 
 Now, you can run the pipeline using:
 

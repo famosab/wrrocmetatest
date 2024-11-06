@@ -27,34 +27,28 @@ workflow WRROCMETATEST {
 
     ch_versions = Channel.empty()
 
-    // Prepare FASTQs channel
-    ch_short_reads = ch_samplesheet.map { meta, sr1, sr2->
-        meta.run = meta.run == [] ? "0" : meta.run
-        meta.single_end = params.single_end
-
-        if (params.single_end) {
-            return [meta, [sr1]]
-        }
-        else {
-            return [meta, [sr1, sr2]]
-        }
-    }
-
     // Run FASTP
-    ch_trimmed_reads = FASTP(
-                ch_short_reads,
+    FASTP( ch_samplesheet,
                 [],
-                params.fastp_save_trimmed_fail,
+                [],
                 [],
                 []
-                ).reads
+                )
 
-    ch_versions = ch_versions.mix( FASTP.versions )
+    ch_versions = ch_versions.mix( FASTP.out.versions )
+
+    FASTP.out.reads
+        .map { meta, reads ->
+            def reads1 = reads[0]
+            def reads2 = reads[1]
+            [meta, reads1, reads2]
+        }
+        .set { converted_reads_ch }
 
     // Run MEGAHIT
-    MEGAHIT( ch_trimmed_reads )
+    MEGAHIT( converted_reads_ch )
 
-    ch_versions = ch_versions.mix( MEGAHIT.versions )
+    ch_versions = ch_versions.mix( MEGAHIT.out.versions )
 
     //
     // Collate and save software versions

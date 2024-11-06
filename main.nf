@@ -44,6 +44,7 @@ workflow FAMOSAB_WRROCMETATEST {
     samplesheet // channel: samplesheet read in from --input
 
     main:
+    println 'Running famosab/wrrocmetatest pipeline'
 
     //
     // WORKFLOW: Run pipeline

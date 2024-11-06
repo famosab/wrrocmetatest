@@ -39,29 +39,29 @@ workflow PIPELINE_INITIALISATION {
     //
     // Print version and exit if required and dump pipeline parameters to JSON file
     //
-    UTILS_NEXTFLOW_PIPELINE (
-        version,
-        true,
-        outdir,
-        workflow.profile.tokenize(',').intersect(['conda', 'mamba']).size() >= 1
-    )
+    // UTILS_NEXTFLOW_PIPELINE (
+    //     version,
+    //     true,
+    //     outdir,
+    //     workflow.profile.tokenize(',').intersect(['conda', 'mamba']).size() >= 1
+    // )
 
-    //
-    // Validate parameters and generate parameter summary to stdout
-    //
-    UTILS_NFSCHEMA_PLUGIN (
-        workflow,
-        validate_params,
-        null
-    )
+    // //
+    // // Validate parameters and generate parameter summary to stdout
+    // //
+    // UTILS_NFSCHEMA_PLUGIN (
+    //     workflow,
+    //     validate_params,
+    //     null
+    // )
 
-    //
-    // Check config provided to the pipeline
-    //
-    UTILS_NFCORE_PIPELINE (
-        nextflow_cli_args
-    )
-
+    // //
+    // // Check config provided to the pipeline
+    // //
+    // UTILS_NFCORE_PIPELINE (
+    //     nextflow_cli_args
+    // )
+    println "Skipping Initialisation"
     //
     // Custom validation for pipeline parameters
     //
@@ -70,6 +70,7 @@ workflow PIPELINE_INITIALISATION {
     //
     // Create channel from input file provided through params.input
     //
+
 
     Channel
         .fromList(samplesheetToList(params.input, "${projectDir}/assets/schema_input.json"))
@@ -110,8 +111,8 @@ workflow PIPELINE_COMPLETION {
     plaintext_email // boolean: Send plain-text email instead of HTML
     outdir          //    path: Path to output directory where results will be published
     monochrome_logs // boolean: Disable ANSI colour codes in log output
-    
-    
+
+
 
     main:
     summary_params = paramsSummaryMap(workflow, parameters_schema: "nextflow_schema.json")
