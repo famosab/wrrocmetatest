@@ -35,7 +35,7 @@ test,read1.fq.gz,read2.fq.gz
 And add the following config file
 
 `testdata.config`:
-```json
+```groovy
 process{
     withName: FASTP {
         cpus = 8
