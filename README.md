@@ -47,6 +47,25 @@ process{
         ext.args = { "--k-min 51 --k-max 71 --k-step 20" }
         }
 }
+
+// add the following lines to run it with nf-prov
+plugins {
+	id 'nf-prov@1.1.0'
+}
+
+prov {
+	enabled = true
+	formats {
+    	wrroc {
+        	file = "${params.outdir}/ro-crate-metadata.json"
+        	overwrite = true
+        	agent {
+            	name = "John Doe"
+            	orcid = "https://orcid.org/0000-0000-0000-0000"
+        	}
+    	}
+	}
+}
 ```
 
 Then you can run the workflow with the following command
