@@ -16,7 +16,7 @@
 
 **famosab/wrroc-meta-test** is a bioinformatics pipeline that runs a minimal working example (fastp + megahit) on a small metagenome data set containing simulated Illumina reads from 15 microbial genomes to test the nf-prov plugin for metagenomics.
 
-![](./wrrocmetatest.excalidraw.svg)
+![](./wrrocmetatest.excalidraw.png)
 
 ## Test Data Sets
 A small metagenome data set containing simulated Illumina reads from 15 microbial genomes
