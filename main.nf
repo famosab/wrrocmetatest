@@ -13,7 +13,7 @@
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { WRROC-META-TEST  } from './workflows/wrroc-meta-test'
+include { WRROCMETATEST           } from './workflows/wrrocmetatest'
 include { PIPELINE_INITIALISATION } from './subworkflows/local/utils_nfcore_wrroc-meta-test_pipeline'
 include { PIPELINE_COMPLETION     } from './subworkflows/local/utils_nfcore_wrroc-meta-test_pipeline'
 include { getGenomeAttribute      } from './subworkflows/local/utils_nfcore_wrroc-meta-test_pipeline'
@@ -38,7 +38,7 @@ params.fasta = getGenomeAttribute('fasta')
 //
 // WORKFLOW: Run main analysis pipeline depending on type of input
 //
-workflow FAMOSAB_WRROC-META-TEST {
+workflow FAMOSAB_WRROCMETATEST {
 
     take:
     samplesheet // channel: samplesheet read in from --input
@@ -48,7 +48,7 @@ workflow FAMOSAB_WRROC-META-TEST {
     //
     // WORKFLOW: Run pipeline
     //
-    WRROC-META-TEST (
+    WRROCMETATEST (
         samplesheet
     )
 }
@@ -76,7 +76,7 @@ workflow {
     //
     // WORKFLOW: Run main workflow
     //
-    FAMOSAB_WRROC-META-TEST (
+    FAMOSAB_WRROCMETATEST (
         PIPELINE_INITIALISATION.out.samplesheet
     )
     //
@@ -88,8 +88,8 @@ workflow {
         params.plaintext_email,
         params.outdir,
         params.monochrome_logs,
-        
-        
+
+
     )
 }
 
