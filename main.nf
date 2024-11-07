@@ -89,8 +89,6 @@ workflow {
         params.plaintext_email,
         params.outdir,
         params.monochrome_logs,
-
-
     )
 }
 
