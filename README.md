@@ -63,6 +63,8 @@ prov {
             	name = "John Doe"
             	orcid = "https://orcid.org/0000-0000-0000-0000"
         	}
+          license = "https://spdx.org/licenses/MIT"
+          profile = "provenance_run_crate"
     	}
 	}
 }
