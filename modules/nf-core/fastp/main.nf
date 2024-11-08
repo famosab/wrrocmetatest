@@ -1,7 +1,7 @@
 process FASTP {
-    tag "$meta.id"
+    tag   "$meta.id"
     label 'process_medium'
-    ext applicationCategory: 'http://edamontology.org/operation_0510', name: 'fastp'
+    ext   name: 'fastp', applicationCategory: 'http://edamontology.org/operation_0510'
 
     conda "${moduleDir}/environment.yml"
     container "${ workflow.containerEngine == 'singularity' && !task.ext.singularity_pull_docker_container ?
