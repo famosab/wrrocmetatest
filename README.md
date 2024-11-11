@@ -18,7 +18,9 @@
 
 ![](./wrrocmetatest.excalidraw.png)
 
-## Test Data Sets
+The application of this pipeline was to be used as exemplary Nextflow pipeline for the development and testing of the nf-prov Nextflow plugin. More information can be found in the [BioHackathon Europe report](https://github.com/SandyRogers/biohack24-metagenomic-crates-report).
+
+## Using the pipeline to test the nf-prov Nextflow plugin
 A small metagenome data set containing simulated Illumina reads from 15 microbial genomes
 
 - https://openstack.cebitec.uni-bielefeld.de:8080/swift/v1/denbi-mg-course/read1.fq.gz
@@ -96,8 +98,6 @@ Each row represents a pair of fastq files (paired end).
 
 Now, you can run the pipeline using:
 
-<!-- TODO nf-core: update the following command to include all required parameters for a minimal example -->
-
 ```bash
 nextflow run famosab/wrroc-meta-test \
    -profile <docker/singularity/.../institute> \
@@ -110,11 +110,7 @@ nextflow run famosab/wrroc-meta-test \
 
 ## Credits
 
-famosab/wrroc-meta-test was originally written by Famke Bäuerle, Tom Tubbesing, Keiler Collier, Matt Burridge, Benedikt Osterholz, Alex Sczyrba.
-
-We thank the following people for their extensive assistance in the development of this pipeline:
-
-<!-- TODO nf-core: If applicable, make list of people who have also contributed -->
+famosab/wrroc-meta-test was originally written by Famke Bäuerle, Tom Tubbesing, Keiler Collier, Matt Burridge, Benedikt Osterholz, Alex Sczyrba, Neil Wipat and Sandy Rogers during the [BioHackathon Europe 2024](https://biohackathon-europe.org/).
 
 ## Contributions and Support
 
@@ -122,9 +118,7 @@ If you would like to contribute to this pipeline, please see the [contributing g
 
 ## Citations
 
-<!-- TODO nf-core: Add citation for pipeline after first release. Uncomment lines below and update Zenodo doi and badge at the top of this file. -->
 <!-- If you use famosab/wrroc-meta-test for your analysis, please cite it using the following doi: [10.5281/zenodo.XXXXXX](https://doi.org/10.5281/zenodo.XXXXXX) -->
-
 
 This pipeline uses code and infrastructure developed and maintained by the [nf-core](https://nf-co.re) community, reused here under the [MIT license](https://github.com/nf-core/tools/blob/main/LICENSE).
 
