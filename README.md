@@ -81,6 +81,9 @@ nextflow run <path/to/>wrrocmetatest/main.nf -profile docker --input <path/to/>t
 
 Depending on your resources this test run takes around 5 minutes.
 
+### Installation of the nf-prov plugin
+Clone the repository with the current working version to your local machine. In our case this is [famosab/nf-prov](https://github.com/famosab/nf-prov). Checkout the relevant branch, here `workflow-run-crate`. Then run `make install`. This will add `nf-prov` to `.nextflow/plugins/` from which it can be used with any pipeline.
+
 ## Usage
 
 > [!NOTE]
