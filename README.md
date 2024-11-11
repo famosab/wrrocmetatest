@@ -32,7 +32,7 @@ To run the pipeline locally on the testdata you need to download the fq files an
 `testsheet.csv`:
 ```csv
 sample,fastq_1,fastq_2
-test,read1.fq.gz,read2.fq.gz
+test,<path/to/>read1.fq.gz,<path/to/>read2.fq.gz
 ```
 
 And add the following config file
@@ -76,7 +76,7 @@ prov {
 Then you can run the workflow with the following command
 
 ```bash
-nextflow run wrrocmetatest/main.nf -profile docker --input testsheet.csv --outdir results -c testdata.config
+nextflow run <path/to/>wrrocmetatest/main.nf -profile docker --input <path/to/>testsheet.csv --outdir results -c <path/to/>testdata.config
 ```
 
 Depending on your resources this test run takes around 5 minutes.
