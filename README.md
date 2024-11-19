@@ -1,4 +1,4 @@
-# famosab/wrroc-meta-test
+# famosab/wrrocmetatest
 
 <!--
 [![GitHub Actions CI Status](https://github.com/famosab/wrroc-meta-test/actions/workflows/ci.yml/badge.svg)](https://github.com/famosab/wrroc-meta-test/actions/workflows/ci.yml)
@@ -15,7 +15,7 @@
 
 ## Introduction
 
-**famosab/wrroc-meta-test** is a bioinformatics pipeline that runs a minimal working example (fastp + megahit) on a small metagenome data set containing simulated Illumina reads from 15 microbial genomes to test the nf-prov plugin for metagenomics.
+**famosab/wrrocmetatest** is a bioinformatics pipeline that runs a minimal working example (fastp + megahit) on a small metagenome data set containing simulated Illumina reads from 15 microbial genomes to test the nf-prov plugin for metagenomics.
 
 ![](./wrrocmetatest.excalidraw.png)
 
