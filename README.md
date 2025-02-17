@@ -53,7 +53,7 @@ process{
 
 // add the following lines to run it with nf-prov
 plugins {
-	id 'nf-prov@1.1.0'
+	id 'nf-prov@1.4.0'
 }
 
 prov {
@@ -72,6 +72,8 @@ prov {
 	}
 }
 ```
+> [!NOTE]
+> Generating workflow run provenance RO-crates is supported by the [nf-prov plugin](https://github.com/nextflow-io/nf-prov/tree/1.4.0) starting from v.1.4.0.
 
 Then you can run the workflow with the following command
 
